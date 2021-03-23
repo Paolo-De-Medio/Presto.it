@@ -17,7 +17,7 @@ function pushCategories () {
         card.classList.add('col-12' , 'col-md-4');
 
         card.innerHTML = `
-            <div class="card text-center pt-3 my-4">
+            <div class="card shake card-effect text-center pt-3 my-4">
             ${category.icon}
                 <div class="card-body">
                     <h5 class="card-title tc-main">${category.cat}</h5>
