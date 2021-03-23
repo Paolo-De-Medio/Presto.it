@@ -31,3 +31,9 @@ function pushCategories () {
 }
 
 pushCategories()
+
+let btnMenu = document.querySelector('#menu-btn');
+btnMenu.addEventListener('click' , () => {
+    let menuIcon = document.querySelector('#menu-icon')
+    menuIcon.classList.toggle('nav-effect')
+})

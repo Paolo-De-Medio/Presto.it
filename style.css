@@ -3,6 +3,7 @@
     --accent-color : #dcb29c;
 }
 
+/* COLORI GENERALI */
 .tc-main {
     color: var(--main-color);
 } 
@@ -11,6 +12,8 @@
     color: var(--accent-color);
 }
 
+
+/* NAVBAR */
 .navbar.navbar-custom {
     background-color: var(--main-color);
     color: var(--accent-color) !important;
@@ -20,27 +23,30 @@
 .navbar.navbar-custom a {
     color: inherit;
 }
+
 .navbar-brand {
     font-weight: 600;
-}
-.bg-red {
-    background-color: red;
-}
-
-.button-custom {
-    display: flex;
 }
 
 .navbar-button {
     padding: .25rem .75rem;
     font-size: 1.25rem;
     line-height: 1;
-    background-color: transparent;
-    border: 1px solid var(--accent-color);
+    background-color: transparent !important;
+    border: 1px solid var(--accent-color) !important;
     border-radius: .25rem;
     transition: box-shadow .15s ease-in-out;
-    color: inherit;
 }
+#menu-icon {
+    transition: all 0.5 ease-in-out;
+}
+.nav-effect {
+    transform: rotate(90deg);
+    transition: all 0.5 ease-in-out;
+}
+
+
+/* MASTHEAD */
 body,html{
     height: 100%;
     width: 100%;
@@ -67,7 +73,7 @@ body,html{
     padding: 10px;
     border-color: var(--main-color);
     border-style: solid;
-    border-width: 3px;
+    border-width: 2px;
 
     }
 
