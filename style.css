@@ -1,0 +1,22 @@
+:root {
+    --main-color : #090e43;
+    --accent-color : #dcb29c;
+}
+
+.navbar.navbar-custom {
+    background-color: var(--main-color) !important;
+    color: var(--accent-color) !important;
+    text-decoration: none !important;
+}
+
+.navbar a {
+    text-decoration: none !important;
+}
+
+.bg-red {
+    background-color: red;
+}
+
+.button-custom {
+    display: flex;
+}
