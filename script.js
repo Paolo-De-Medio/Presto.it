@@ -88,7 +88,7 @@ let ultimiAnnunci = document.querySelector('.lastAds')
                     let card= document.createElement('div')
                     card.innerHTML=
                     `
-                    <div class="card bg-dark text-white  mx-2">
+                    <div class="card bg-dark text-white mx-2">
                         <img class="card-img img-fluid" src="https://picsum.photos/600" alt="Card image">
                         <div class="card-img-overlay">
                             <h5 class="card-title">${annuncio.titolo}</h5>

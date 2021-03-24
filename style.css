@@ -1,7 +1,8 @@
 :root {
-    --main-color : #090e43;
-    --accent-color : #dcb29c;
-    --sec-color : #E2D3B0;
+    --main-color : #21284b;
+    --accent-color : #e67b66;
+    --sec-color : #815196;
+    --text-color: white;
 }
 
 /* COLORI GENERALI */
@@ -13,6 +14,10 @@
     color: var(--accent-color);
 }
 
+.tc-sec{
+    color: var(--sec-color);
+}
+
 .bg-main{
     background-color: var(--main-color);
 }
@@ -21,14 +26,18 @@
     background-color: var(--accent-color);
 }
 
+.bg-footer{
+    background-color: #171c35;
+}
+
+
+
 /* NAVBAR */
+
 .navbar.navbar-custom {
-    background-color: var(--main-color);
+    background-color: #21284be3;
     color: var(--accent-color) !important;
     text-decoration: none;
-    border-style: solid;
-    border-width: 1px;
-    border-color: var(--sec-color);
 }
 
 .navbar.navbar-custom a {
@@ -48,12 +57,15 @@
     border-radius: .25rem;
     transition: box-shadow .15s ease-in-out;
 }
+
 #menu-icon {
     transition: all 0.5s ease-in-out;
 }
+
 .nav-effect {
     transform: rotate(90deg);
 }
+
 .nav-item:hover {
     transform: scale(1.1);
 
@@ -63,6 +75,11 @@
 
 }
 
+/* TITLE */
+.title-presto{
+    font-size: 80px;
+}
+
 
 /* MASTHEAD */
 body,html{
@@ -70,13 +87,14 @@ body,html{
     width: 100%;
     margin: 0;
     padding: 0;
-    background: var(--accent-color) !important;
+    background: var(--main-color) !important;
     }
+    
     .masthead {
         height: 100vh;
         min-height: 500px;
         background-color: var(--accent-color);
-        background-image: url(./media/19742.png);
+        background-image: url(./media/Bg-4.png);
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -168,17 +186,20 @@ body,html{
     .btn-color:hover{
         background-color: white;
         color: var(--accent-color);
-        border: 2px solid var(--accent-color);
+        border: 1px solid var(--accent-color);
     }
+
     h2, span {
         font-weight: 600;
     }
+
     .card-effect {
         transition: all 0.5s ease-in-out;
     }
+
     .card:hover {
-        -webkit-box-shadow: 5px 7px 6px 4px rgba(220,178,156,0.62); 
-        box-shadow: 5px 7px 6px 4px rgba(220,178,156,0.62);
+        -webkit-box-shadow: 3px 3px 5px 4px rgba(0, 0, 0, 0.3); 
+        box-shadow: 5px 5px 5px 4px rgba(70, 49, 49, 0.2);
     }
 
     #adsWrapper {
