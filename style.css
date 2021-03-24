@@ -187,4 +187,5 @@ body,html{
     .navbar-custom{
         position: sticky;
         top: 45px;
+        z-index: 2;
     }
