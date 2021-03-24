@@ -69,3 +69,43 @@ btnMenu.addEventListener('click' , () => {
 // }
 // }
 // pushAds()
+
+let ultimiAnnunci = document.querySelector('.lastAds')
+
+            function AggiungiAnnuncio (){
+                
+                let annunci = [
+                 {titolo:"Moto" , descrizione:'Carne montana miglior spaccio italiano....', prezzo:'15£' },
+                 {titolo:"Auto" , descrizione:'Carne montana miglior spaccio italiano....', prezzo:'15£' },
+                 {titolo:"Erba" , descrizione:'Carne montana miglior spaccio italiano....', prezzo:'15£' },  
+                 {titolo:"Trattori" , descrizione:'Carne montana miglior spaccio italiano....', prezzo:'15£' },  
+                 {titolo:"Telefoni" , descrizione:'Carne montana miglior spaccio italiano....', prezzo:'15£' },  
+                 {titolo:"Dottore" , descrizione:'Carne montana miglior spaccio italiano....', prezzo:'15£' },  
+                 {titolo:"Cocktail" , descrizione:'Carne montana miglior spaccio italiano....', prezzo:'15£' },  
+                 {titolo:"Diplomi" , descrizione:' Carne montana miglior spaccio italiano....', prezzo:'15£' } 
+                ] 
+                annunci.forEach(annuncio  =>{
+                    let card= document.createElement('div')
+                    card.innerHTML=
+                    `
+                    <div class="card bg-dark text-white  mx-2">
+                        <img class="card-img img-fluid" src="https://picsum.photos/600" alt="Card image">
+                        <div class="card-img-overlay">
+                            <h5 class="card-title">${annuncio.titolo}</h5>
+                            <p class="card-text">${annuncio.descrizione}</p>
+                            <p class="card-text">${annuncio.prezzo}</p>
+                            <div class="row  justify-content-between ">
+                                <div class="col-7 position-absolute start-0 btn-bottom-1"><button class="btn btn-outline-main">Scopri di più</button></div>
+                                <div class="col-3 position-absolute end-0 btn-bottom-1 "></div>
+                            </div>
+                        </div>
+                    </div>
+                    `
+
+                ultimiAnnunci.appendChild(card)
+
+                })
+            } 
+           if (ultimiAnnunci){
+               AggiungiAnnuncio()
+           }
