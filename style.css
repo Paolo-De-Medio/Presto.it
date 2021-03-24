@@ -27,7 +27,10 @@
 }
 
 .bg-footer{
-    background-color: #171c35;
+    background-image: url(./media/Bg-4.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
 }
 
 
