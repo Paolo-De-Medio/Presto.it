@@ -9,7 +9,6 @@ function pushCategories () {
         {cat: 'Telefonia' , icon: '<i class="fas fa-mobile-alt display-5 tc-main"></i>'},
         {cat: 'Videogames' , icon: '<i class="fas fa-gamepad display-5 tc-main"></i>'},
     ]
-    console.log(categories)
 
     if(categoryWrapper){
 
@@ -69,4 +68,4 @@ btnMenu.addEventListener('click' , () => {
 // })
 // }
 // }
-pushAds()
+// pushAds()

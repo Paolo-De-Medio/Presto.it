@@ -185,6 +185,53 @@ body,html{
         display: inline !important;
     }
 
+    /* CAROUSEL */
+    .ad-card-overlay {
+    background: #021a2778;
+    backdrop-filter: blur(20px);
+    transition: all 0.4s ease-in-out;
+}
+
+.p-radius {
+    border-radius: var(--radius);
+}
+
+
+.ad-card-overlay:hover {
+    backdrop-filter: blur(0px);
+    color: transparent !important;
+}
+
+.ad-card-overlay:hover h5 , .ad-card-overlay:hover p {
+    transition: all 0.4s ease-in-out;
+    color: transparent !important;
+}
+
+.ad-card-overlay button.more {
+    position: absolute;
+    bottom: 20px;
+}
+
+.ad-card-overlay button.like {
+    position: absolute;
+    bottom: 15px;
+    right: 20px;
+}
+
+.ad-card-overlay button.like:hover {
+    color: var(--main-color);
+}
+
+.slick-prev:before, .slick-next:before {
+    color: var(--black);
+    font-size: 30px;
+}
+
+
+
+
+
+
     /* SECONDA NAVBAR */
 
     .navbar-custom{
