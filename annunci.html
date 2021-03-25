@@ -111,21 +111,20 @@
           <section class="filters">
 
 <!-- Section: Category -->
-            <section  filter="category">
+            <section >
               <h6 class="font-weight-bold mb-2">Categorie:</h6>
 
-              <div class="form-check pl-0 mb-3">
+              <div id="categoryWrapper" class="form-check pl-0 mb-3">
                 <input
-                  price="0-25"
+                  category-filter='All'
                   type="radio"
-                  class="filter-option form-check-input"
-                  id="categoryFilter"
-                  name="materialExampleRadios"
+                  class="form-check-input"
+                  name="category-filter"
                 />
                 <label
-                  class="form-check-label small text-uppercase card-link-secondary"
-                  for="categoryLabel"
-                  >ESEMPIO</label
+                  class="form-check-label"
+                  for="flexRa"
+                  >Tutti gli annunci</label
                 >
               </div>
 
@@ -238,7 +237,11 @@
 
     <script>
       fetch('./annunci.json').then(data => data.json()).then(annunci => {
+        
+        function fillPage(annunci) {
         let adsWrapper = document.querySelector('#adsWrapper')
+          adsWrapper.innerHTML = ''
+
 
         annunci.forEach(annuncio => {
           let adsCard = document.createElement('div')
@@ -263,7 +266,66 @@
     `
     adsWrapper.appendChild(adsCard)
 })
-})
+}
+  fillPage(annunci)
+
+
+        function fillCategories() {
+          let categoryWrapper = document.querySelector('#categoryWrapper')
+          let categorySet = new Set ();
+          let array = [];
+
+          annunci.forEach(annuncio => {
+          categorySet.add(annuncio.category)
+          })
+
+          array = Array.from(categorySet);
+          
+            for (let i = 0 ; i < array.length ; i++) {
+              let catCard = document.createElement('div')
+
+            catCard.innerHTML = `
+                <input
+                  category-filter='${array[i]}'
+                  type="radio"
+                  class="form-check-input"
+                  name="category-filter"
+                />
+                <label
+                  class="form-check-label"
+                  for="flexRadioDefault1"
+                  >${array[i]}</label
+                >
+                `
+                categoryWrapper.appendChild(catCard)
+        }}
+        fillCategories()
+
+
+        function filterCategory() {
+          let filters = document.querySelectorAll('[category-filter]')
+
+              filters.forEach(filter => {
+                filter.addEventListener('input' , () => {
+
+                    let check = filter.getAttribute('category-filter')
+
+                    let filtered;
+                    if (check === 'All') {
+                        filtered = annunci
+                    } else {
+                        filtered = annunci.filter(annuncio => annuncio.category === check)
+                    }
+                    fillPage(filtered)
+                })
+              })}
+                filterCategory()
+    })
+
+    
+      
+
+
     </script>
 
     
