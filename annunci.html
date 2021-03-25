@@ -31,7 +31,7 @@
 
     <title>Presto.it!</title>
   </head>
-  <body class="bg-light">
+  <body>
 
     <!-- //NAVBAR -->
       <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
@@ -102,19 +102,19 @@
     <div class="row">
 
       <!--Grid column-->
-      <div class="col-12 col-md-4 mb-4">
+      <div class="col-12 col-md-4 p-4 bg-accent filter-nav-custom">
         <!-- Section: Sidebar -->
         <section>
-          <h2 class="tc-accent mt-3 pb-2">Filtra per: </h2>
+          <h2 class="tc-main fw-bold mt-3 pb-2">Filtra per:</h2>
 
           <!-- Section: Filters -->
           <section class="filters">
 
 <!-- Section: Category -->
-            <section >
+            <section>
               <h6 class="font-weight-bold mb-2">Categorie:</h6>
 
-              <div id="categoryWrapper" class="form-check pl-0 mb-3">
+              <div id="categoryWrapper" class="form-check mb-3">
                 <input
                   category-filter='All'
                   type="radio"
@@ -131,7 +131,7 @@
             <section class="mb-2 mt-3" filter="price">
               <h6 class="font-weight-bold mt-4 mb-2">Prezzo:</h6>
 
-              <div class="form-check pl-0 mb-3">
+              <div class="form-check mb-3">
                 <input
                   price="0-25"
                   type="radio"
@@ -238,15 +238,25 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="addModalLabel">Modal title</h5>
+        <h5 class="modal-title" id="addModalLabel">Descrizione</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        ...
+        <div class="container">
+          <div class="row">
+            <div class="col-6">
+            <img src="https://picsum.photos/200/300" alt="">
+            </div>
+            <div class="col-6">
+              <h5 class="fw-bold">Maggiori Informazioni</h5>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo rem quod repellat deleniti doloremque labore architecto repellendus eos velit consequuntur sint optio blanditiis culpa quaerat iure exercitationem, pariatur natus tempore.</p>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Understood</button>
+        <button type="button" class="btn bg-main buy-btn">Understood</button>
       </div>
     </div>
   </div>
@@ -279,8 +289,8 @@
                           <h5 class="card-title fw-bold ps-3">${annuncio.name}</h5>
                           <p class="card-text ps-3">${annuncio.price} €</p>
                           <p class="card-text ps-3"><small class="text-muted">${annuncio.category}</small></p>
-                          <button type="button" class="btn btn-primary" data-bs-toggle="modal"  data-bs-target="#addModal">
-                              Launch static backdrop modal
+                          <button type="button" class="btn bg-main buy-btn" data-bs-toggle="modal"  data-bs-target="#addModal">
+                              Maggiori Informazioni
                             </button>
 
                         </div>

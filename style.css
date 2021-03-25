@@ -82,10 +82,11 @@ h2 .font-logo {
 
 .nav-item:hover {
     transform: scale(1.1);
-
+    transition: all 0.5s ease-in-out;
 }
 .navbar-brand:hover {
     transform: scale(1.1);
+    transition: all 0.5s ease-in-out;
 }
 
 @media screen and (max-width: 1000px) {
@@ -101,6 +102,7 @@ h2 .font-logo {
 
 
 /* MASTHEAD */
+
 body,html{
     height: 100%;
     width: 100%;
@@ -203,8 +205,21 @@ body,html{
         transition: all 0.5s ease-in-out;
     }
 
-    .card {
-        max-width: 100%;
+    .card-custom{
+        border: 1px solid lightgrey;
+        border-radius: 10px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: top;
+        backdrop-filter: blur(3px);
+        transition: all 0.5s ease-in-out;
+    }
+
+    .card-custom:hover {
+        -webkit-box-shadow: 3px 3px 5px 4px rgba(0, 0, 0, 0.3); 
+        box-shadow: 5px 5px 5px 4px rgba(70, 49, 49, 0.2);
+        background-color: rgba(230, 123, 102, 0.3);
+        transform: scale(1.1);
     }
 
     .btn-color:hover{
@@ -217,16 +232,6 @@ body,html{
         font-weight: 600;
     }
 
-    .card-effect {
-        transition: all 0.5s ease-in-out;
-    }
-
-    .card:hover {
-        -webkit-box-shadow: 3px 3px 5px 4px rgba(0, 0, 0, 0.3); 
-        box-shadow: 5px 5px 5px 4px rgba(70, 49, 49, 0.2);
-        background-color: rgba(230, 123, 102, 0.5);
-    }
-
 
     /* CAROUSEL */
 
@@ -234,8 +239,8 @@ body,html{
         -webkit-text-stroke: 0.5px black;
     }
     .ad-card-overlay {
-    background: #021a2778;
-    backdrop-filter: blur(20px);
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(3px);
     transition: all 0.4s ease-in-out;
 }
 
@@ -314,4 +319,23 @@ body,html{
         position: sticky;
         top: 45px;
         z-index: 2;
+    }
+
+    /* SEZIONE FILTRI */
+
+    .filter-nav-custom{
+        border-radius: 7px;
+        max-height: 80vh;
+    }
+
+    /* BOTTONO COMPRA */
+    
+    .buy-btn{
+        color: white;
+    }
+
+    .buy-btn:hover{
+        background-color: white;
+        color: var(--accent-color);
+        border: 1px solid var(--accent-color);
     }
