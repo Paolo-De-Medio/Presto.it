@@ -39,50 +39,19 @@ btnMenu.addEventListener('click' , () => {
     menuIcon.classList.toggle('nav-effect')
 })
 
-// let adsWrapper = document.querySelector('#adsWrapper');
-// if(adsWrapper) {
-// function pushAds () {
-    
-//     annunci.forEach(annuncio => {
-//     let adsCard = document.createElement ('div');
-
-//     adsCard.innerHTML = `
-//             <div class="col-6">
-//                 <div class="card p-3 mt-4" style="max-width: 540px;">
-//                     <div class="row g-0">
-//                       <div class="col-md-4">
-//                         <img src="https://picsum.photos/200" alt="...">
-//                       </div>
-//                       <div class="col-md-8">
-//                         <div class="card-body">
-//                           <h5 class="card-title fw-bold ps-3">${annuncio.name}</h5>
-//                           <p class="card-text ps-3">${annuncio.price}</p>
-//                           <p class="card-text ps-3"><small class="text-muted">${annuncio.category}</small></p>
-//                         </div>
-//                       </div>
-//                     </div>
-//                   </div>
-//             </div>
-//     `
-//     adsWrapper.appendChild(adsCard)
-// })
-// }
-// }
-// pushAds()
-
 let ultimiAnnunci = document.querySelector('.lastAds')
 
             function AggiungiAnnuncio (){
                 
                 let annunci = [
-                 {titolo:"Moto" , descrizione:'Carne montana miglior spaccio italiano....', prezzo:'15£' },
-                 {titolo:"Auto" , descrizione:'Carne montana miglior spaccio italiano....', prezzo:'15£' },
-                 {titolo:"Erba" , descrizione:'Carne montana miglior spaccio italiano....', prezzo:'15£' },  
-                 {titolo:"Trattori" , descrizione:'Carne montana miglior spaccio italiano....', prezzo:'15£' },  
-                 {titolo:"Telefoni" , descrizione:'Carne montana miglior spaccio italiano....', prezzo:'15£' },  
-                 {titolo:"Dottore" , descrizione:'Carne montana miglior spaccio italiano....', prezzo:'15£' },  
-                 {titolo:"Cocktail" , descrizione:'Carne montana miglior spaccio italiano....', prezzo:'15£' },  
-                 {titolo:"Diplomi" , descrizione:' Carne montana miglior spaccio italiano....', prezzo:'15£' } 
+                 {titolo:"Suzuki Alto" , descrizione:'Lorem Ipsum', prezzo:'1200€' },
+                 {titolo:"Chuwi Corebook X" , descrizione:'Lorem Ipsum', prezzo:'300€' },
+                 {titolo:"Diablo III" , descrizione:'Lorem Ipsum', prezzo:'30€' },  
+                 {titolo:"Programmare" , descrizione:'Lorem Ipsum', prezzo:'15€' },  
+                 {titolo:"Scarpiera" , descrizione:'Lorem Ipsum', prezzo:'20€' },  
+                 {titolo:"Sandor 3x" , descrizione:'Lorem Ipsum', prezzo:'4000€' },  
+                 {titolo:"Villa a schiera" , descrizione:'Lorem Ipsum', prezzo:'200000€' },  
+                 {titolo:"Drone 230kg" , descrizione:' Lorem Ipsum', prezzo:'700€' } 
                 ] 
                 annunci.forEach(annuncio  =>{
                     let card= document.createElement('div')
@@ -95,7 +64,7 @@ let ultimiAnnunci = document.querySelector('.lastAds')
                             <p class="card-text">${annuncio.descrizione}</p>
                             <p class="card-text">${annuncio.prezzo}</p>
                             <div class="row  justify-content-between ">
-                                <div class="col-7 position-absolute start-0 btn-bottom-1"><button class="btn btn-outline-main">Scopri di più</button></div>
+                                <div class="col-7 position-absolute start-0 btn-bottom-1"><button class="btn btn-outline-main">Vai all'annuncio</button></div>
                                 <div class="col-3 position-absolute end-0 btn-bottom-1 "></div>
                             </div>
                         </div>
@@ -109,3 +78,23 @@ let ultimiAnnunci = document.querySelector('.lastAds')
            if (ultimiAnnunci){
                AggiungiAnnuncio()
            }
+
+           //Get the button:
+mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}

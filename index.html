@@ -5,6 +5,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+
     <!-- Add the slick-theme.css if you want default styling -->
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <!-- Add the slick-theme.css if you want default styling -->
@@ -17,7 +21,7 @@
     <!-- Css Stylesheet -->
     <link rel="stylesheet" href="./style.css">
     
-    <!-- Fontawesom -->
+    <!-- Fontawesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
     
     
@@ -32,7 +36,7 @@
     <!-- //NAVBAR -->
       <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
         <div class="container-fluid">
-          <a class="ps-5 navbar-brand text-white" href="#"><i class="fas fa-shipping-fast pe-2 fs-3 tc-accent"></i>Presto.it</a>
+          <a class="ps-5 navbar-brand text-white font-logo" href="./index.html"><i class="fas fa-shipping-fast pe-2 fs-3 tc-accent"></i>Presto.it</a>
           <button id="menu-btn" class="navbar-toggler navbar-button" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"><i id="menu-icon" class="mt-1 fas fa-ellipsis-v tc-accent"></i></span>
           </button>
@@ -40,6 +44,9 @@
               <div>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                          <li class="nav-item text-white">
+                            <a class="nav-link active" aria-current="page" href="./annunci.html"><i class="fas fa-handshake tc-accent pe-2"></i>Sfoglia gli annunci</a>
+                        </li>
                         <li class="nav-item text-white">
                             <a class="nav-link active" aria-current="page" href="#"><i class="fas fa-tags tc-accent pe-2"></i>Inserisci il tuo annuncio</a>
                         </li>
@@ -62,7 +69,7 @@
         <div class="container h-100">
           <div class="row h-100 align-items-center">
             <div class="col-12 text-center">
-              <h1 class="shake text-white title-presto"><i class="fas fa-shipping-fast tc-accent pe-3 display-4"></i><span class="fw-bold">Presto</span>.it</h1>
+              <h1 class="shake text-white title-presto font-logo"><i class="fas fa-shipping-fast tc-accent pe-3 display-3"></i>Presto<span class="tc-accent">.</span>it</h1>
               <p class="lead text-white">Il tuo prossimo affare è qui!</p>
               <div class="container h-100">
                 <div class="d-flex justify-content-center h-100">
@@ -82,7 +89,7 @@
         <div class="pt-5 pb-3 container d-flex justify-content-center tc-main">
           <div class="row">
             <div class="col-12">
-              <h2 class="display-4">Esplora le nostre <span class="tc-accent"> categorie</span></h2>
+              <h2 class="display-4">Esplora le nostre <span class="tc-accent font-logo"> categorie</span></h2>
             </div>
           </div>
         </div>
@@ -97,7 +104,7 @@
 <section class="container my-5 py-5">
   <div class="row">
     <div class="col-12 text-center my-5">
-      <h2 class="text-white display-4">Esplora i nostri <span class="tc-accent"> ultimi annunci</span></h2>
+      <h2 class="text-white display-4">Esplora i nostri <span class="tc-accent font-logo"> ultimi annunci</span></h2>
     </div>
     <div class="col-12">
       <div class="lastAds">
@@ -108,6 +115,8 @@
   </div>
 </section>
 
+<!-- GO UP BUTTON -->
+<button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fas fa-arrow-up"></i></button>
 
   <!-- FOOTER -->
 
@@ -116,17 +125,17 @@
         <div class="container-fluid bg-footer py-3 px-3 ">
         <div class="row footer-text ">
             <div class="col-12 col-sm-8 px-5 "> 
-                <h3 class="tc-accent">Testo Generico</h3>
-                <p class="fs-5 text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae laboriosam, in totam dignissimos neque eveniet fugit inventore, magnam atque itaque provident minima illo nam beatae, excepturi velit a accusamus doloremque!</p>
-                <p class="fs-5 text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem beatae et exercitationem corporis excepturi enim repudiandae reiciendis, nesciunt fugit mollitia optio, incidunt odio fugiat ratione eos illo dolor repellendus quibusdam?</p>
+                <h3 class="tc-accent font-logo"><i class="fas fa-pepper-hot fs-1 text-white"></i> Team DIPC(M)</h3>
+                <p class="fs-5 text-white">Davide Igor Paolo Cecilia</p>
+                <p class="fs-5 text-white">P.Iva 1234567890 - Cookie policy - privacy policy</p>
             </div>
             <div class="col-12 col-sm-4 py-3 px-3">
-            <h3 class="tc-accent">Quick Link</h3>
+            <h3 class="tc-accent font-logo">Social</h3>
             <ul class="fs-5 text-white">
-                <li>Lorem Link</li>
-                <li>Lorem Link</li>
-                <li>Lorem Link</li>
-                <li>Lorem Link</li>
+              <li><i class="fab fa-facebook-square tc-accent"></i> Facebook</li>
+              <li><i class="fab fa-instagram tc-accent"></i> Instagram</li>
+              <li><i class="fab fa-linkedin tc-accent"></i> LinkedIn</li>
+              </i><li><i class="fab fa-twitter-square tc-accent"></i> Twitter</li>
             </ul>
             </div>
         </div>
