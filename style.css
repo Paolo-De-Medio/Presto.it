@@ -203,6 +203,10 @@ body,html{
         transition: all 0.5s ease-in-out;
     }
 
+    .card {
+        max-width: 100%;
+    }
+
     .btn-color:hover{
         background-color: white;
         color: var(--accent-color);
@@ -221,11 +225,6 @@ body,html{
         -webkit-box-shadow: 3px 3px 5px 4px rgba(0, 0, 0, 0.3); 
         box-shadow: 5px 5px 5px 4px rgba(70, 49, 49, 0.2);
         background-color: rgba(230, 123, 102, 0.5);
-    }
-
-
-    #adsWrapper {
-        display: inline !important;
     }
 
 
