@@ -17,7 +17,7 @@ function pushCategories () {
         card.classList.add('col-12' , 'col-md-4');
 
         card.innerHTML = `
-            <div class="card shake card-effect text-center pt-3 my-4">
+            <div class="card-custom text-center pt-3 my-4">
             ${category.icon}
                 <div class="card-body">
                     <h5 class="card-title tc-main">${category.cat}</h5>
@@ -57,15 +57,18 @@ let ultimiAnnunci = document.querySelector('.lastAds')
                     let card= document.createElement('div')
                     card.innerHTML=
                     `
-                    <div class="card bg-dark text-white mx-2">
+                    <div class="card bg-dark text-white mx-4">
                         <img class="card-img img-fluid" src="https://picsum.photos/600" alt="Card image">
-                        <div class="card-img-overlay">
-                            <h5 class="card-title">${annuncio.titolo}</h5>
+                        <div class="col-12 card-img-overlay p-4 ad-card-overlay text-center">
+                            <h5 class="card-title tc-accent fw-bold fs-4">${annuncio.titolo}</h5>
                             <p class="card-text">${annuncio.descrizione}</p>
                             <p class="card-text">${annuncio.prezzo}</p>
-                            <div class="row  justify-content-between ">
-                                <div class="col-7 position-absolute start-0 btn-bottom-1"><button class="btn btn-outline-main">Vai all'annuncio</button></div>
-                                <div class="col-3 position-absolute end-0 btn-bottom-1 "></div>
+                            <button class="btn btn-outline-main">Vai all'annuncio</button>
+                            <div class="row justify-content-between ">
+                                <div class="col-12 position-absolute start-0 btn-bottom-1">
+                                    
+                                </div>
+                                <div class="col-3 position-absolute end-0 btn-bottom-1"></div>
                             </div>
                         </div>
                     </div>
@@ -101,3 +104,7 @@ function topFunction() {
 
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> e3b2df14340e53a1610daf44d10b6b34ebe9c00d

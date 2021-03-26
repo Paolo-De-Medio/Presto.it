@@ -31,7 +31,7 @@
 
     <title>Presto.it!</title>
   </head>
-  <body class="bg-light">
+  <body>
 
     <!-- //NAVBAR -->
       <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
@@ -65,140 +65,72 @@
       </nav>
 
 
-      <!-- SECONDA NAVBAR
-      <div class="container-fluid d-flex justify-content-center bg-accent navbar-custom">
-          <div class="row">
-            <div class=" tc-main mt-3">
-                <div class="container-fluid">
-                  <div class="navbar-text me-5">
-                    <i class="fas fa-search pe-2"></i>
-                    <input type="text" placeholder="Cosa cerchi?">
-                  </div>
-                  <i class="fas fa-clipboard-list pe-2"></i>
-                  <div class="navbar-text me-5">
-                    <div>
-                        <select class="form-select form-select-sm" aria-label=".form-select-sm example">
-                            <option selected>Tutte le categorie</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
-                          </select>
-                    </div>                                 
-                  </div>
-                  <div class="navbar-text ms-5">
-                    <i class="fas fa-euro-sign pe-2"></i>
-                    <input type="text" placeholder="Quanto vuoi spendere?">
-                  </div>
-                </div>
-            </div>
-          </div>
-      </div> -->
-
 <!-- FILTERS -->
 
 <main>
   <div class="container">
-    <!--Grid row-->
     <div class="row">
-
-      <!--Grid column-->
-      <div class="col-12 col-md-4 mb-4">
+      <div class="col-12 col-md-4 p-4 mt-5 bg-accent filter-nav-custom">
         <!-- Section: Sidebar -->
         <section>
-          <h2 class="tc-accent mt-3 pb-2">Filtra per: </h2>
+          <h2 class="tc-main fw-bold mt-3 pb-1">Ricerca:</h2>
+            <!-- Section: Filters -->
+            <section class="filters">
+              <!-- Section: Category -->
+              <section>
+                <i class="fas tc-main fa-search-dollar me-2 fs-4"></i><input id="input-text" type="text" class="mb-4" placeholder="Cosa stai cercando?">
+              </section>
+              <section>
+                <h6 class="font-weight-bold mb-2 tc-main">Categorie:</h6>
 
-          <!-- Section: Filters -->
-          <section class="filters">
+                <div id="categoryWrapper" class="form-check mb-3">
+                  <input
+                    category-filter='All'
+                    type="radio"
+                    class="form-check-input"
+                    name="category-filter"/>
+                  <label class="form-check-label text-white">
+                    Tutti gli annunci
+                  </label>
+                </div>
 
-<!-- Section: Category -->
-            <section >
-              <h6 class="font-weight-bold mb-2">Categorie:</h6>
+              <section class="mb-2 mt-3" filter="price">
+                <h6 class="font-weight-bold mt-4 mb-2 tc-main">Prezzo:</h6>
 
-              <div id="categoryWrapper" class="form-check pl-0 mb-3">
-                <input
-                  category-filter='All'
-                  type="radio"
-                  class="form-check-input"
-                  name="category-filter"
-                />
-                <label
-                  class="form-check-label"
-                  for="flexRa"
-                  >Tutti gli annunci</label
-                >
-              </div>
-
-            <section class="mb-2 mt-3" filter="price">
-              <h6 class="font-weight-bold mt-4 mb-2">Prezzo:</h6>
-
-              <div class="form-check pl-0 mb-3">
-                <input
-                  price="0-25"
-                  type="radio"
-                  class="filter-option form-check-input"
-                  id="priceFilter"
-                  name="materialExampleRadios"
-                />
-                <label
-                  class="form-check-label small text-uppercase card-link-secondary"
-                  for="under25"
-                  >ESEMPIO</label
-                >
-              </div>
-              
+                <form class="form-check mb-3 p-0">
+                  <i class="fs-4 fas tc-main fa-euro-sign pe-2"></i><input class="mb-2" id="min-price"  type="text" placeholder="Min"><br>
+                  <i class="fas fs-4 tc-main fa-euro-sign pe-2"></i><input class="mb-2" id="max-price"  type="text" placeholder="Max"><br>
+                  <button type="button" id="save-price" class="btn btn-color border ms-3">Vai</button>
+                  <input type="reset" value="Reset" onclick="location.reload()" class="btn btn-color border">
+                </form>
               <!-- Sorting -->
-
-              <div class="select-outline position-relative w-100">
-                <h6 class="font-weight-bold mt-4 mb-2">Ordina:</h6>
-                <select id="sort" class="mdb-select md-form md-outline">
-                  
-                  <option value="1">Prezzo Crescente</option>
-                  <option value="2">Data aggiunta</option>
-                </select>
-              </div>
-  
+                <div class="select-outline position-relative w-100 text-white">
+                    <h6 class="font-weight-bold mt-4 mb-2 tc-main">Ordina:</h6>
+                    <i class="fs-4 fas fa-sort tc-main me-1"></i><button class="btn btn-color border" id="ordine-crescente"> Crescente</button>
+                    <button class="btn btn-color border" id="ordine-decrescente">Decrescente</button>
+                </div>
                   <!-- Sorting -->
             </section>
             <!-- Section: Price -->
-
           </section>
           <!-- Section: Filters -->
-
         </section>
         <!-- Section: Sidebar -->
-
       </div>
-      <!--Grid column-->
 
-      <!--Grid column-->
       <div class="col-12 col-md-8 mb-4">
       <!-- CARD ANNUNCI -->
       <div  class="container-fluid mt-5">
         <div  class="row">
             <div id="adsWrapper">
 
-              </div>
-
-
-        </section>
-        <!-- Section: Block Content -->
-
-        <!--Section: Block Content-->
-
-        <section>
-
-
             </div>
-        </div>
-    </div>
-
-
+        </section>
+                </div>
+              </div>
+          </div>
       </div>
-      <!--Grid column-->
-
     </div>
-    <!--Grid row-->
-
   </div>
 </main>
 
@@ -212,21 +144,26 @@
 
   <footer class="footer container-fluid section-margin bg-footer">
     <div class="row">
-        <div class="container-fluid bg-footer py-3 px-3 ">
-        <div class="row footer-text ">
-            <div class="col-12 col-sm-8 px-5 "> 
-                <h3 class="tc-accent font-logo"><i class="fas fa-pepper-hot fs-1 text-white"></i> Team DIPC(M)</h3>
+        <div class="container-fluid bg-footer p-5">
+        <div class="row footer-text">
+
+            <div class="col-12 col-sm-8"> 
+                <h3 class="tc-accent font-logo"><i class="fas fa-pepper-hot fs-1 tc-accent me-2"></i> Team DIPC(M)</h3>
                 <p class="fs-5 text-white">Davide Igor Paolo Cecilia</p>
                 <p class="fs-5 text-white">P.Iva 1234567890 - Cookie policy - privacy policy</p>
+                <p class="text-white">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi sed fugit, ipsam at <br> nisi maiores quaerat reiciendis eos tenetur! Porro quidem quo.</p>
             </div>
+
             <div class="col-12 col-sm-4 py-3 px-3">
-            <h3 class="tc-accent font-logo">Social</h3>
-            <ul class="fs-5 text-white">
-              <li><i class="fab fa-facebook-square tc-accent"></i> Facebook</li>
-              <li><i class="fab fa-instagram tc-accent"></i> Instagram</li>
-              <li><i class="fab fa-linkedin tc-accent"></i> LinkedIn</li>
-              </i><li><i class="fab fa-twitter-square tc-accent"></i> Twitter</li>
-            </ul>
+              <h3 class="tc-accent font-logo fs-2">Social</h3>
+
+              <div class="fs-5 text-white">
+                <div><i class="fab fa-facebook-square tc-accent fs-4 me-2 pb-2"></i>Facebook</div>
+                <div><i class="fab fa-instagram tc-accent fs-4 me-2 pb-2"></i>Instagram</div>
+                <div><i class="fab fa-linkedin tc-accent fs-4 me-2 pb-2"></i>LinkedIn</div>
+                <div><i class="fab fa-twitter-square tc-accent fs-4 me-2 pb-2"></i>Twitter</div>
+              </div> 
+
             </div>
         </div>
     </div>
@@ -238,15 +175,25 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="addModalLabel">Modal title</h5>
+        <h5 class="modal-title" id="addModalLabel">Descrizione</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        ...
+        <div class="container">
+          <div class="row">
+            <div class="col-6">
+            <img src="https://picsum.photos/200/300" alt="">
+            </div>
+            <div class="col-6">
+              <h5 class="fw-bold">Maggiori Informazioni</h5>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo rem quod repellat deleniti doloremque labore architecto repellendus eos velit consequuntur sint optio blanditiis culpa quaerat iure exercitationem, pariatur natus tempore.</p>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Understood</button>
+        <button type="button" class="btn bg-main buy-btn">Understood</button>
       </div>
     </div>
   </div>
@@ -257,8 +204,11 @@
     <script src="./script.js"></script>
 
     <script>
+
+      // FETCH JSON
       fetch('./annunci.json').then(data => data.json()).then(annunci => {
         
+        // RIEMPI PAGINA ANNUNCI
         function fillPage(annunci) {
         let adsWrapper = document.querySelector('#adsWrapper')
           adsWrapper.innerHTML = ''
@@ -279,8 +229,8 @@
                           <h5 class="card-title fw-bold ps-3">${annuncio.name}</h5>
                           <p class="card-text ps-3">${annuncio.price} €</p>
                           <p class="card-text ps-3"><small class="text-muted">${annuncio.category}</small></p>
-                          <button type="button" class="btn btn-primary" data-bs-toggle="modal"  data-bs-target="#addModal">
-                              Launch static backdrop modal
+                          <button type="button" class="btn bg-main buy-btn" data-bs-toggle="modal"  data-bs-target="#addModal">
+                              Maggiori Informazioni
                             </button>
 
                         </div>
@@ -295,6 +245,7 @@
   fillPage(annunci)
 
 
+        // RIEMPI CATEGORIE
         function fillCategories() {
           let categoryWrapper = document.querySelector('#categoryWrapper')
           let categorySet = new Set ();
@@ -317,7 +268,7 @@
                   name="category-filter"
                 />
                 <label
-                  class="form-check-label"
+                  class="form-check-label text-white" 
                   for="flexRadioDefault1"
                   >${array[i]}</label
                 >
@@ -326,7 +277,7 @@
         }}
         fillCategories()
 
-
+        // RICERCA PER CATEGORIA
         function filterCategory() {
           let filters = document.querySelectorAll('[category-filter]')
 
@@ -345,7 +296,75 @@
                 })
               })}
                 filterCategory()
-    })
+
+                // RICERCA PER TESTO
+                function inputSearch (){
+
+                let inputSearch = document.querySelector('#input-text');
+                
+
+                inputSearch.addEventListener('input', () =>{
+                  console.log(inputSearch)
+                let search = inputSearch.value.toLowerCase();
+
+                let filtered = annunci.filter(annuncio => annuncio.name.toLowerCase().includes(search))
+
+                fillPage(filtered) 
+
+                  })   
+                }
+                inputSearch()
+
+
+                // RICERCA PER PREZZO
+                function priceSearch() {
+                  let savePrice = document.querySelector('#save-price')
+
+                  savePrice.addEventListener('click' , () => {
+                    let minPrice = document.querySelector('#min-price').value
+                    let maxPrice = document.querySelector('#max-price').value
+                    
+                    // annunci.forEach(annuncio => {
+                      let filtered = annunci.filter(el => Number(el.price) <= Number(maxPrice)).filter(el => Number(el.price) >= Number(minPrice))
+
+                      fillPage(filtered)
+
+                    })
+
+                    
+                  // })
+                  
+                } 
+                priceSearch()
+
+
+                function sort(){
+
+                  let crescente = document.querySelector('#ordine-crescente');
+                  let decrescente = document.querySelector('#ordine-decrescente');
+
+                  crescente.addEventListener('click', () =>{
+                    console.log('ciao')
+
+                    let risultati = annunci.sort((a,b) => Number(a.price) - Number(b.price));
+
+                    fillPage(risultati)
+                  })
+
+                  decrescente.addEventListener('click', () =>{
+
+                  let risultati = annunci.sort((a,b) => Number(b.price) - Number(a.price));
+
+                    fillPage(risultati)
+                  })
+                  
+                  }
+
+                  sort()
+
+                })
+
+                
 
     
       
