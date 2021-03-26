@@ -126,7 +126,6 @@
                 />
                 <label
                   class="form-check-label"
-                  for="flexRa"
                   >Tutti gli annunci</label
                 >
               </div>
@@ -135,8 +134,10 @@
               <h6 class="font-weight-bold mt-4 mb-2">Prezzo:</h6>
 
               <div class="form-check mb-3">
-               <input id="min-price" type="text" placeholder="Min">
-               <input id="max-price" type="text" placeholder="Max">
+               <input id="min-price"  type="text" placeholder="Min">
+               <input id="max-price"  type="text" placeholder="Max"><br>
+               <button type="button" id="save-price" class="btn btn-primary">Vai</button><br>
+               <button type="button" id="reset" class="btn btn-primary">Resetta</button>
               </div>
               
               <!-- Sorting -->
@@ -266,8 +267,10 @@
 
     <script>
 
+      // FETCH JSON
       fetch('./annunci.json').then(data => data.json()).then(annunci => {
         
+        // RIEMPI PAGINA ANNUNCI
         function fillPage(annunci) {
         let adsWrapper = document.querySelector('#adsWrapper')
           adsWrapper.innerHTML = ''
@@ -304,6 +307,7 @@
   fillPage(annunci)
 
 
+        // RIEMPI CATEGORIE
         function fillCategories() {
           let categoryWrapper = document.querySelector('#categoryWrapper')
           let categorySet = new Set ();
@@ -335,7 +339,7 @@
         }}
         fillCategories()
 
-
+        // RICERCA PER CATEGORIA
         function filterCategory() {
           let filters = document.querySelectorAll('[category-filter]')
 
@@ -355,51 +359,64 @@
               })}
                 filterCategory()
 
-
+                // RICERCA PER TESTO
                 function inputSearch (){
 
                 let inputSearch = document.querySelector('#input-text');
-                console.log(inputSearch);
+                
 
                 inputSearch.addEventListener('input', () =>{
-
+                  console.log(inputSearch)
                 let search = inputSearch.value.toLowerCase();
-                console.log(search)
 
                 let filtered = annunci.filter(annuncio => annuncio.name.toLowerCase().includes(search))
 
                 fillPage(filtered) 
 
-                })   
+                  })   
                 }
-
                 inputSearch()
 
 
-                function maxMinPrice(){
+                // RICERCA PER PREZZO
+                function priceSearch() {
+                  let savePrice = document.querySelector('#save-price')
 
-                  let min = document.getElementById('#min-price').addEventListener('change');
+                  savePrice.addEventListener('click' , () => {
+                    let minPrice = document.querySelector('#min-price').value
+                    let maxPrice = document.querySelector('#max-price').value
+                    
+                    // annunci.forEach(annuncio => {
+                      let filtered = annunci.filter(el => Number(el.price) <= Number(maxPrice)).filter(el => Number(el.price) >= Number(minPrice))
 
-                  let max = document.getElementById('#max-price').addEventListener('change');
+                      fillPage(filtered)
 
-                  let filteredPrice;
+                    })
 
-                  annunci.forEach(annuncio => (){
-                    if(annuncio.price > min && annuncio.price < max){
+                    
+                  // })
+                  
+                } 
+                priceSearch()
 
-                      filteredPrice = annuncio.price
+                // RESET PREZZI
+                function resetPrice() {
+                  let resetPrice = document.querySelector('#reset')
+                  let minPrice = document.querySelector('#min-price').value
+                  let maxPrice = document.querySelector('#max-price').value
 
-                      fillPage(filteredPrice)
-                      
-                    }
+                  resetPrice.addEventListener('click' , () => {
+                  console.log(minPrice)
+                   minPrice = document.getElementById('#min-price').innerHTML = 0;
+                   maxPrice = document.getElementById('#max-price').innerHTML = 99999;
+
                   })
+                }
+                resetPrice()
+
 
                 }
-
-                maxMinPrice()
-
-
-    })
+    )
 
     
       
