@@ -313,13 +313,6 @@ body,html{
     }
 
 
-    /* SECONDA NAVBAR */
-
-    .navbar-custom{
-        position: sticky;
-        top: 45px;
-        z-index: 2;
-    }
 
     /* SEZIONE FILTRI */
 
