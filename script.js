@@ -55,9 +55,10 @@ let ultimiAnnunci = document.querySelector('.lastAds')
                 ] 
                 annunci.forEach(annuncio  =>{
                     let card= document.createElement('div')
+
                     card.innerHTML=
                     `
-                    <div class="card bg-dark text-white mx-4">
+                    <div class=" vertical-center card bg-dark text-white mx-4">
                         <img class="card-img img-fluid" src="https://picsum.photos/600" alt="Card image">
                         <div class="col-12 card-img-overlay p-4 ad-card-overlay text-center">
                             <h5 class="card-title tc-accent fw-bold fs-4">${annuncio.titolo}</h5>
@@ -104,7 +105,3 @@ function topFunction() {
 
 
 
-<<<<<<< HEAD
-=======
-
->>>>>>> e3b2df14340e53a1610daf44d10b6b34ebe9c00d

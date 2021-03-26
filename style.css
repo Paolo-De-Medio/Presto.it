@@ -161,6 +161,7 @@ body,html{
     border-width: 2px;
     }
 
+
     .search_input{
     color: white;
     border: 0;
@@ -177,6 +178,18 @@ body,html{
     width: 450px;
     caret-color:red;
     transition: width 0.4s linear;
+    }
+
+    @media screen and (max-width: 780px){
+        .searchbar:hover > .search_input{
+            width: 300px; 
+        }
+    }
+
+    @media screen and (max-width: 445px){
+        .searchbar:hover > .search_input{
+            width: 200px;
+        }
     }
 
     .searchbar:hover > .search_icon{
@@ -267,9 +280,18 @@ body,html{
         bottom: 20px;
     }
 
-        .slick-next , .slick-prev {
-            color: white;
-        }
+    .slick-next , .slick-prev {
+        color: white;
+    }
+
+    .vertical {
+        position: relative;
+    }
+
+    .vertical-center {
+        position: absolute;
+        transform: translateY(-100% , -100%);
+      }
 
 
     /* GO UP BUTTON */
@@ -327,7 +349,6 @@ body,html{
         color: white;
     }
 
-<<<<<<< HEAD
 
 
 
@@ -359,10 +380,4 @@ body,html{
         border-color: white;
         outline: 0;
         box-shadow: none;
-=======
-    .buy-btn:hover{
-        background-color: white;
-        color: var(--accent-color);
-        border: 1px solid var(--accent-color);
->>>>>>> e3b2df14340e53a1610daf44d10b6b34ebe9c00d
     }
