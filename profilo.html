@@ -118,7 +118,20 @@
                                       </button>
                                     </h2>
                                     <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample">
-                                      <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine this being filled with some actual content.</div>
+                                      <div class="accordion-body"><table class="table caption-top">
+                                        <thead>
+                                          <tr class="tc-main">
+                                            <th scope="col"><i class="fas fa-shopping-bag"></i></th>
+                                            <th scope="col">Oggetto</th>
+                                            <th scope="col">Categoria</th>
+                                            <th scope="col">Prezzo</th>
+                                          </tr>
+                                        </thead>
+                                        <tbody id="wrapperFavs">
+                                          
+                                        </tbody>
+                                      </table><code></code>
+                                    </div>
                                     </div>
                                   </div>
                                   <div class="accordion-item">
@@ -147,13 +160,8 @@
                                             <th scope="col">Prezzo</th>
                                           </tr>
                                         </thead>
-                                        <tbody id="table-closed">
-                                          <tr>
-                                            <th scope="row">1</th>
-                                            <td>Mark</td>
-                                            <td>Otto</td>
-                                            <td>@mdo</td>
-                                          </tr>
+                                        <tbody id="wrapperTabs">
+                                          
                                         </tbody>
                                       </table><code></code>
                                     </div>
@@ -172,27 +180,32 @@
 
 <!-- FOOTER -->
 
-            <footer class="footer container-fluid section-margin bg-footer">
-                <div class="row">
-                    <div class="container-fluid bg-footer py-3 px-3 ">
-                    <div class="row footer-text ">
-                        <div class="col-12 col-sm-8 px-5 "> 
-                            <h3 class="tc-accent font-logo"><i class="fas fa-pepper-hot fs-1 text-white"></i> Team DIPC(M)</h3>
-                            <p class="fs-5 text-white">Davide Igor Paolo Cecilia</p>
-                            <p class="fs-5 text-white">P.Iva 1234567890 - Cookie policy - privacy policy</p>
-                        </div>
-                        <div class="col-12 col-sm-4 py-3 px-3">
-                        <h3 class="tc-accent font-logo">Social</h3>
-                        <ul class="fs-5 text-white">
-                        <li><i class="fab fa-facebook-square tc-accent"></i> Facebook</li>
-                        <li><i class="fab fa-instagram tc-accent"></i> Instagram</li>
-                        <li><i class="fab fa-linkedin tc-accent"></i> LinkedIn</li>
-                        </i><li><i class="fab fa-twitter-square tc-accent"></i> Twitter</li>
-                        </ul>
-                        </div>
-                    </div>
-                </div>
-            </footer>
+<footer class="footer container-fluid section-margin bg-footer">
+  <div class="row">
+      <div class="container-fluid bg-footer p-5">
+      <div class="row footer-text">
+
+          <div class="col-12 col-sm-8"> 
+              <h3 class="tc-accent font-logo"><i class="fas fa-pepper-hot fs-1 tc-accent me-2"></i> Team DIPC(M)</h3>
+              <p class="fs-5 text-white">Davide Igor Paolo Cecilia</p>
+              <p class="fs-5 text-white">P.Iva 1234567890 - Cookie policy - privacy policy</p>
+              <p class="text-white">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi sed fugit, ipsam at <br> nisi maiores quaerat reiciendis eos tenetur! Porro quidem quo.</p>
+          </div>
+
+          <div class="col-12 col-sm-4 py-3 px-3">
+            <h3 class="tc-accent font-logo fs-2">Social</h3>
+
+            <div class="fs-5 text-white">
+              <div><i class="fab fa-facebook-square tc-accent fs-4 me-2 pb-2"></i>Facebook</div>
+              <div><i class="fab fa-instagram tc-accent fs-4 me-2 pb-2"></i>Instagram</div>
+              <div><i class="fab fa-linkedin tc-accent fs-4 me-2 pb-2"></i>LinkedIn</div>
+              <div><i class="fab fa-twitter-square tc-accent fs-4 me-2 pb-2"></i>Twitter</div>
+            </div> 
+
+          </div>
+      </div>
+  </div>
+</footer>
 
 
 
@@ -207,31 +220,59 @@
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
     <!-- CECILIA -->
-    <script>
-        fetch('./annunci.json') .then(data => data.json())
-            .then(annunci => {
-                
-                function populateClosed (){
-            
-            let table = document.querySelector('#table-closed');
-
-            let ads = annunci.slice(0,5)
-
-            ads.forEach(ad => {
-                let tr = document.createElement('tr')
-
-                tr.innerHtml = `
-                <th scope="row">${ad.id}</th>
-                <td>${ad.name}</td>
-                <td>${ad.category}</td>
-                <td>${ad.price}</td>
-                `
-                table.appendChild(tr)
-            })
-            }
-            populateClosed()
-        })
-    </script> 
     <script src="./script.js"></script>
+
+    <script>
+      // FETCH JSON
+      fetch('./annunci.json').then(data => data.json()).then(annunci => {
+        function fillTabs () {
+          let wrapperTabs = document.querySelector('#wrapperTabs')
+          let closed = annunci.slice(35,40)
+          
+          closed.forEach(el => {
+            let tabs = document.createElement('tr')
+            console.log(tabs)
+
+            tabs.innerHTML = `
+              <tr>
+              <th scope="row">${el.id}</th>
+              <td>${el.name}</td>
+              <td>${el.category}</td>
+              <td>${el.price}</td>
+            </tr>
+            `
+            wrapperTabs.appendChild(tabs)
+          })
+          let wrapperFav = document.querySelector('#wrapperFav')
+          let favs = annunci.slice(22,25)
+          
+          favs.forEach(fav => {
+            let favs = document.createElement('tr')
+            console.log(favs)
+
+            favs.innerHTML = `
+              <tr>
+              <th scope="row">${fav.id}</th>
+              <td>${fav.name}</td>
+              <td>${fav.category}</td>
+              <td>${fav.price}</td>
+            </tr>
+            `
+            wrapperFavs.appendChild(favs)
+          })
+        }
+        fillTabs()
+
+      })
+
+    </script>
+
+
+
+
+
+
+
+    
     </body>
 </html>
