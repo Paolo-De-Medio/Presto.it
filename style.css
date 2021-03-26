@@ -315,3 +315,36 @@ body,html{
         top: 45px;
         z-index: 2;
     }
+
+
+
+
+
+
+     /* CECILIA */
+
+
+    /* PROFILO */
+
+    img {
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+    }
+
+    /* ACCORDION */
+
+    .i-color {
+        color: #e67b66;
+    }
+
+    .accordion-button:not(.collapsed) {
+        color:white;
+        background-color:#e67b66;
+    }
+    .accordion-button:focus {
+        z-index: 3;
+        border-color: white;
+        outline: 0;
+        box-shadow: none;
+    }
