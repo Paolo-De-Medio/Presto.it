@@ -133,12 +133,12 @@
             <section class="mb-2 mt-3" filter="price">
               <h6 class="font-weight-bold mt-4 mb-2">Prezzo:</h6>
 
-              <div class="form-check mb-3">
+              <form class="form-check mb-3">
                <input id="min-price"  type="text" placeholder="Min">
                <input id="max-price"  type="text" placeholder="Max"><br>
                <button type="button" id="save-price" class="btn btn-primary">Vai</button><br>
-               <button type="button" id="reset" class="btn btn-primary">Resetta</button>
-              </div>
+               <input type="reset" value="Reset" class="btn btn-primary">
+              </form>
               
               <!-- Sorting -->
 
@@ -399,20 +399,7 @@
                 } 
                 priceSearch()
 
-                // RESET PREZZI
-                function resetPrice() {
-                  let resetPrice = document.querySelector('#reset')
-                  let minPrice = document.querySelector('#min-price').value
-                  let maxPrice = document.querySelector('#max-price').value
 
-                  resetPrice.addEventListener('click' , () => {
-                  console.log(minPrice)
-                   minPrice = document.getElementById('#min-price').innerHTML = 0;
-                   maxPrice = document.getElementById('#max-price').innerHTML = 99999;
-
-                  })
-                }
-                resetPrice()
 
 
                 }
