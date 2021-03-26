@@ -142,13 +142,12 @@
               
               <!-- Sorting -->
 
-              <div class="select-outline position-relative w-100">
-                <h6 class="font-weight-bold mt-4 mb-2">Ordina:</h6>
-                <select id="sort" class="mdb-select md-form md-outline">
-                  
-                  <option value="1">Prezzo Crescente</option>
-                  <option value="2">Data aggiunta</option>
-                </select>
+              <div class="select-outline position-relative w-100 text-white">
+
+                  <h6 class="font-weight-bold mt-4 mb-2">Ordina:</h6>
+                  <button id="ordine-crescente"> Crescente</button>
+                  <button id="ordine-decrescente">Decrescente</button>
+                
               </div>
   
                   <!-- Sorting -->
@@ -400,10 +399,33 @@
                 priceSearch()
 
 
+                function sort(){
 
+                  let crescente = document.querySelector('#ordine-crescente');
+                  let decrescente = document.querySelector('#ordine-decrescente');
 
-                }
-    )
+                  crescente.addEventListener('click', () =>{
+                    console.log('ciao')
+
+                    let risultati = annunci.sort((a,b) => Number(a.price) - Number(b.price));
+
+                    fillPage(risultati)
+                  })
+
+                  decrescente.addEventListener('click', () =>{
+
+                  let risultati = annunci.sort((a,b) => Number(b.price) - Number(a.price));
+
+                    fillPage(risultati)
+                  })
+                  
+                  }
+
+                  sort()
+
+                })
+
+                
 
     
       
