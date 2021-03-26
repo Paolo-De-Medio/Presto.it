@@ -105,12 +105,15 @@
       <div class="col-12 col-md-4 p-4 bg-accent filter-nav-custom">
         <!-- Section: Sidebar -->
         <section>
-          <h2 class="tc-main fw-bold mt-3 pb-2">Filtra per:</h2>
+          <h2 class="tc-main fw-bold mt-3 pb-2">Ricerca:</h2>
 
           <!-- Section: Filters -->
           <section class="filters">
 
 <!-- Section: Category -->
+            <section>
+              <input id="input-text" type="text" class="mb-3" placeholder="Cosa stai cercando?">
+            </section>
             <section>
               <h6 class="font-weight-bold mb-2">Categorie:</h6>
 
@@ -132,18 +135,8 @@
               <h6 class="font-weight-bold mt-4 mb-2">Prezzo:</h6>
 
               <div class="form-check mb-3">
-                <input
-                  price="0-25"
-                  type="radio"
-                  class="filter-option form-check-input"
-                  id="priceFilter"
-                  name="materialExampleRadios"
-                />
-                <label
-                  class="form-check-label small text-uppercase card-link-secondary"
-                  for="under25"
-                  >ESEMPIO</label
-                >
+               <input id="min-price" type="text" placeholder="Min">
+               <input id="max-price" type="text" placeholder="Max">
               </div>
               
               <!-- Sorting -->
@@ -272,6 +265,7 @@
     <script src="./script.js"></script>
 
     <script>
+
       fetch('./annunci.json').then(data => data.json()).then(annunci => {
         
         function fillPage(annunci) {
@@ -360,6 +354,51 @@
                 })
               })}
                 filterCategory()
+
+
+                function inputSearch (){
+
+                let inputSearch = document.querySelector('#input-text');
+                console.log(inputSearch);
+
+                inputSearch.addEventListener('input', () =>{
+
+                let search = inputSearch.value.toLowerCase();
+                console.log(search)
+
+                let filtered = annunci.filter(annuncio => annuncio.name.toLowerCase().includes(search))
+
+                fillPage(filtered) 
+
+                })   
+                }
+
+                inputSearch()
+
+
+                function maxMinPrice(){
+
+                  let min = document.getElementById('#min-price').addEventListener('change');
+
+                  let max = document.getElementById('#max-price').addEventListener('change');
+
+                  let filteredPrice;
+
+                  annunci.forEach(annuncio => (){
+                    if(annuncio.price > min && annuncio.price < max){
+
+                      filteredPrice = annuncio.price
+
+                      fillPage(filteredPrice)
+                      
+                    }
+                  })
+
+                }
+
+                maxMinPrice()
+
+
     })
 
     
