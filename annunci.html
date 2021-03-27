@@ -182,8 +182,9 @@
             <img src="https://picsum.photos/200/300" alt="">
             </div>
             <div class="col-6">
-              <h5 class="fw-bold">Maggiori Informazioni</h5>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo rem quod repellat deleniti doloremque labore architecto repellendus eos velit consequuntur sint optio blanditiis culpa quaerat iure exercitationem, pariatur natus tempore.</p>
+              <h5 id="titolo-annuncio" class="fw-bold"></h5>
+              <p id="categoria-annuncio"></p>
+              <p id="prezzo-annuncio"></p>
             </div>
           </div>
         </div>
@@ -222,11 +223,11 @@
                         <img id="img-annunci" class="img-fluid" src="https://picsum.photos/200" alt="...">
                       </div>
                       <div class="col-12 col-md-6">
-                        <div class="card-body">
+                        <div class="card-body" id-annuncio="${annuncio.id}">
                           <h5 class="card-title fw-bold">${annuncio.name}</h5>
                           <p class="card-text">${annuncio.price} €</p>
                           <p class="card-text"><small class="text-muted">${annuncio.category}</small></p>
-                          <button type="button" class="btn btn-color" data-bs-toggle="modal"  data-bs-target="#addModal">
+                          <button id="modal-id" type="button" class="btn btn-color" data-bs-toggle="modal" data-bs-target="#addModal">
                               Maggiori Informazioni
                             </button>
 
@@ -358,6 +359,39 @@
                   }
 
                   sort()
+    
+
+                  function fillModal(){
+
+                  let button = document.querySelectorAll('[id-annuncio]');
+
+                    for( let i=0 ; i < annunci.length; i++){
+
+                      let titolo = document.querySelector('#titolo-annuncio');
+                      let categoria = document.querySelector('#categoria-annuncio');
+                      let prezzo = document.querySelector('#prezzo-annuncio');
+
+
+                      button[i].addEventListener('click', () => {
+
+                    
+                      let id = button[i].getAttribute("id-annuncio");
+
+                      if(id == annunci[i].id){
+
+                        titolo.innerHTML = annunci[i].name
+                        categoria.innerHTML = annunci[i].category
+                        prezzo.innerHTML = annunci[i].price
+                      }
+
+                      })
+                  })
+
+
+                  }
+
+                  fillModal()
+
 
                 })
 
