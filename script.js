@@ -55,15 +55,16 @@ let ultimiAnnunci = document.querySelector('.lastAds')
                 ] 
                 annunci.forEach(annuncio  =>{
                     let card= document.createElement('div')
+
                     card.innerHTML=
                     `
-                    <div class="card bg-dark text-white mx-4">
+                    <div class=" vertical-center card bg-dark text-white mx-4">
                         <img class="card-img img-fluid" src="https://picsum.photos/600" alt="Card image">
                         <div class="col-12 card-img-overlay p-4 ad-card-overlay text-center">
-                            <h5 class="card-title tc-accent fw-bold fs-4">${annuncio.titolo}</h5>
+                            <h5 class=" mt-5 card-title tc-accent fw-bold fs-4">${annuncio.titolo}</h5>
                             <p class="card-text">${annuncio.descrizione}</p>
                             <p class="card-text">${annuncio.prezzo}</p>
-                            <button class="btn btn-outline-main">Vai all'annuncio</button>
+                            <button class="mt-2 text-center mb-2 btn btn-color ">Vai all'annuncio</button>
                             <div class="row justify-content-between ">
                                 <div class="col-12 position-absolute start-0 btn-bottom-1">
                                     
@@ -104,7 +105,38 @@ function topFunction() {
 
 
 
-<<<<<<< HEAD
-=======
+// ESERCIZIO P/CECILIA JS
 
->>>>>>> e3b2df14340e53a1610daf44d10b6b34ebe9c00d
+let users = [
+    {name: 'xxx' , surname: 'xxx' , photo: 'xxx'},
+    {name: 'Davide' , surname: 'Cariola' , photo: './media/davide-user'},
+    {name: 'Cecilia' , surname: 'Rocchi' , photo: './media/cecilia-user'},
+    {name: 'Paolo' , surname: 'de Medio' , photo: './media/paolo-user'},
+    {name: 'Igor' , surname: 'Oliynyk' , photo: './media/igor-user'},
+]
+let random = Math.floor(Math.random() * 4) + 1;
+console.log(random)
+
+
+// SIDEBAR SCROLL
+
+// $(function() {
+
+//     let $sidebar   = $("#sidebar"), 
+//         $window    = $(window),
+//         offset     = $sidebar.offset(),
+//         topPadding = 15;
+
+//     $window.scroll(function() {
+//         if ($window.scrollTop() > offset.top) {
+//             $sidebar.stop().animate({
+//                 marginTop: $window.scrollTop() - offset.top + topPadding
+//             });
+//         } else {
+//             $sidebar.stop().animate({
+//                 marginTop: 0
+//             });
+//         }
+//     });
+    
+// });
