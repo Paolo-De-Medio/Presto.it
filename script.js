@@ -64,7 +64,7 @@ let ultimiAnnunci = document.querySelector('.lastAds')
                             <h5 class=" mt-5 card-title tc-accent fw-bold fs-4">${annuncio.titolo}</h5>
                             <p class="card-text">${annuncio.descrizione}</p>
                             <p class="card-text">${annuncio.prezzo}</p>
-                            <button class="mt-2git  text-center mb-2 btn btn-color ">Vai all'annuncio</button>
+                            <button class="mt-2 text-center mb-2 btn btn-color ">Vai all'annuncio</button>
                             <div class="row justify-content-between ">
                                 <div class="col-12 position-absolute start-0 btn-bottom-1">
                                     
@@ -105,3 +105,14 @@ function topFunction() {
 
 
 
+// ESERCIZIO P/CECILIA JS
+
+let users = [
+    {name: 'xxx' , surname: 'xxx' , photo: 'xxx'},
+    {name: 'Davide' , surname: 'Cariola' , photo: './media/davide-user'},
+    {name: 'Cecilia' , surname: 'Rocchi' , photo: './media/cecilia-user'},
+    {name: 'Paolo' , surname: 'de Medio' , photo: './media/paolo-user'},
+    {name: 'Igor' , surname: 'Oliynyk' , photo: './media/igor-user'},
+]
+let random = Math.floor(Math.random() * 4) + 1;
+console.log(random)

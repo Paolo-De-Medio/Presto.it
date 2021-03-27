@@ -54,7 +54,7 @@
                             <a class="nav-link" href="#"><i class="fas fa-user-plus tc-accent pe-1 pe-2"></i> Registrati</a>
                         </li>
                         <li class="nav-item text-white">
-                            <a class="nav-link" href="#"><i class="fas tc-accent fa-user-check pe-1 pe-2"></i>Accedi</a>
+                            <a class="nav-link" href="./profilo.html"><i class="fas tc-accent fa-user-check pe-1 pe-2"></i>Accedi</a>
                         </li>
                         </ul>
                     </div>
@@ -72,8 +72,7 @@
     <div class="row">
       <div class="col-12 col-md-4 p-4 mt-5 bg-accent filter-nav-custom">
         <!-- Section: Sidebar -->
-        <section>
-          <h2 class="tc-main fw-bold mt-3 pb-1">Ricerca:</h2>
+          <h2 class="tc-main font-logo mt-3 pb-1">Ricerca:</h2>
             <!-- Section: Filters -->
             <section class="filters">
               <!-- Section: Category -->
@@ -81,7 +80,7 @@
                 <i class="fas tc-main fa-search-dollar me-2 fs-4"></i><input id="input-text" type="text" class="mb-4" placeholder="Cosa stai cercando?">
               </section>
               <section>
-                <h6 class="font-weight-bold mb-2 tc-main">Categorie:</h6>
+                <h6 class=" font-logo mb-2 tc-main">Categorie:</h6>
 
                 <div id="categoryWrapper" class="form-check mb-3">
                   <input
@@ -95,7 +94,7 @@
                 </div>
 
               <section class="mb-2 mt-3" filter="price">
-                <h6 class="font-weight-bold mt-4 mb-2 tc-main">Prezzo:</h6>
+                <h6 class="font-logo mt-4 mb-2 tc-main">Prezzo:</h6>
 
                 <form class="form-check mb-3 p-0">
                   <i class="fs-4 fas tc-main fa-euro-sign pe-2"></i><input class="mb-2" id="min-price"  type="text" placeholder="Min"><br>
@@ -105,7 +104,7 @@
                 </form>
               <!-- Sorting -->
                 <div class="select-outline position-relative w-100 text-white">
-                    <h6 class="font-weight-bold mt-4 mb-2 tc-main">Ordina:</h6>
+                    <h6 class="font-logo mt-4 mb-2 tc-main">Ordina:</h6>
                     <i class="fs-4 fas fa-sort tc-main me-1"></i><button class="btn btn-color border" id="ordine-crescente"> Crescente</button>
                     <button class="btn btn-color border" id="ordine-decrescente">Decrescente</button>
                 </div>
@@ -114,7 +113,6 @@
             <!-- Section: Price -->
           </section>
           <!-- Section: Filters -->
-        </section>
         <!-- Section: Sidebar -->
       </div>
 
@@ -220,15 +218,15 @@
           adsCard.innerHTML = `
           
                     <div class="row d-flex align-items-center justify-content-center">
-                      <div class="col-md-4">
-                        <img src="https://picsum.photos/200" alt="...">
+                      <div class="col-12 col-md-6">
+                        <img class="img-fluid" src="https://picsum.photos/200" alt="...">
                       </div>
-                      <div class="col-md-6">
+                      <div class="col-12 col-md-6">
                         <div class="card-body">
-                          <h5 class="card-title fw-bold ps-3">${annuncio.name}</h5>
-                          <p class="card-text ps-3">${annuncio.price} €</p>
-                          <p class="card-text ps-3"><small class="text-muted">${annuncio.category}</small></p>
-                          <button type="button" class="btn bg-main buy-btn" data-bs-toggle="modal"  data-bs-target="#addModal">
+                          <h5 class="card-title fw-bold">${annuncio.name}</h5>
+                          <p class="card-text">${annuncio.price} €</p>
+                          <p class="card-text"><small class="text-muted">${annuncio.category}</small></p>
+                          <button type="button" class="btn btn-color" data-bs-toggle="modal"  data-bs-target="#addModal">
                               Maggiori Informazioni
                             </button>
 
