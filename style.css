@@ -363,9 +363,7 @@ body,html{
             transform: scale(1)
          }
 
-        /* #img-annunci {
-           transform: translateX(64%)
-        } */
+    }
 
 
     @media screen and (max-width:301px) {
@@ -376,7 +374,7 @@ body,html{
         #ordine-decrescente {
             transform: scale(0.8);
         }
-
+    }
 
 
     /* BOTTONE COMPRA */
