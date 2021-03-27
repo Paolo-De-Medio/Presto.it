@@ -167,31 +167,30 @@
     </div>
 </footer>
 
-    <!-- Modal -->
+    <!-- MODAL -->
 <div class="modal fade" id="addModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="addModalLabel">Descrizione</h5>
+      <div class="modal-header bg-accent">
+        <h5 class="modal-title tc-main font-logo" id="addModalLabel">Annuncio</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <div class="container">
+        <div class="container-fluid text-center">
           <div class="row">
-            <div class="col-6">
-            <img src="https://picsum.photos/200/300" alt="">
+            <div class="col-12">
+              <img class="border-solid mb-5" src="https://picsum.photos/200" alt="">
             </div>
-            <div class="col-6">
-              <h5 id="titolo-annuncio" class="fw-bold"></h5>
-              <p id="categoria-annuncio"></p>
-              <p id="prezzo-annuncio"></p>
+            <div class="col-12">
+              <h5 id="titolo-annuncio" class="fw-bold tc-main fs-2"></h5>
+              <p class="text-muted" id="categoria-annuncio"></small></p>
+              <p class="tc-accent fs-3" id="prezzo-annuncio"></p>
             </div>
           </div>
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn bg-main buy-btn">Understood</button>
+        <button type="button" class="btn btn-color" data-bs-dismiss="modal">Contatta l'inserzionista</button>
       </div>
     </div>
   </div>
@@ -220,12 +219,12 @@
           
                     <div class="row d-flex align-items-center justify-content-center">
                       <div class="col-12 col-md-6">
-                        <img id="img-annunci" class="img-fluid" src="https://picsum.photos/200" alt="...">
+                        <img id="img-annunci" class="img-fluid p-4" src="https://picsum.photos/300" alt="...">
                       </div>
                       <div class="col-12 col-md-6">
                         <div class="card-body" id-annuncio="${annuncio.id}">
-                          <h5 class="card-title fw-bold">${annuncio.name}</h5>
-                          <p class="card-text">${annuncio.price} €</p>
+                          <h5 class="tc-main fs-2 card-title fw-bold">${annuncio.name}</h5>
+                          <p class="tc-accent fs-3 card-text">${annuncio.price} €</p>
                           <p class="card-text"><small class="text-muted">${annuncio.category}</small></p>
                           <button id="modal-id" type="button" class="btn btn-color" data-bs-toggle="modal" data-bs-target="#addModal">
                               Maggiori Informazioni
@@ -238,6 +237,7 @@
 
     `
     adsWrapper.appendChild(adsCard)
+    fillModal()
 })
 }
   fillPage(annunci)
@@ -291,6 +291,7 @@
                         filtered = annunci.filter(annuncio => annuncio.category === check)
                     }
                     fillPage(filtered)
+                    // fillModal()
                 })
               })}
                 filterCategory()
@@ -302,13 +303,11 @@
                 
 
                 inputSearch.addEventListener('input', () =>{
-                  console.log(inputSearch)
                 let search = inputSearch.value.toLowerCase();
 
                 let filtered = annunci.filter(annuncio => annuncio.name.toLowerCase().includes(search))
-
                 fillPage(filtered) 
-
+                
                   })   
                 }
                 inputSearch()
@@ -317,32 +316,29 @@
                 // RICERCA PER PREZZO
                 function priceSearch() {
                   let savePrice = document.querySelector('#save-price')
-
+                  
                   savePrice.addEventListener('click' , () => {
                     let minPrice = document.querySelector('#min-price').value
                     let maxPrice = document.querySelector('#max-price').value
-                    
-                    // annunci.forEach(annuncio => {
-                      let filtered = annunci.filter(el => Number(el.price) <= Number(maxPrice)).filter(el => Number(el.price) >= Number(minPrice))
 
+                      let filtered = annunci.filter(el => Number(el.price) <= Number(maxPrice)).filter(el => Number(el.price) >= Number(minPrice))
+                      
                       fillPage(filtered)
+                      
 
                     })
-
-                    
-                  // })
                   
                 } 
                 priceSearch()
 
 
+                // ORDINA CRESCENTE-DECRESCENTE
                 function sort(){
 
                   let crescente = document.querySelector('#ordine-crescente');
                   let decrescente = document.querySelector('#ordine-decrescente');
 
                   crescente.addEventListener('click', () =>{
-                    console.log('ciao')
 
                     let risultati = annunci.sort((a,b) => Number(a.price) - Number(b.price));
 
@@ -352,21 +348,24 @@
                   decrescente.addEventListener('click', () =>{
 
                   let risultati = annunci.sort((a,b) => Number(b.price) - Number(a.price));
-
+                  console.log(risultati)
+                  
                     fillPage(risultati)
+                    fillModalSort()
+                    
                   })
                   
                   }
-
                   sort()
     
+                  // FUNZIONI MODALI
 
-                  function fillModal(){
+                  function fillModalSort(){
 
                   let button = document.querySelectorAll('[id-annuncio]');
 
                     for( let i=0 ; i < annunci.length; i++){
-
+                      // ARRIVANDOCI COL RAGIONAMENTO, LA FUNZIONE FUNZIONA MA VA EVIDENTEMENTE IN CONFLITTO CON I VARI FILTRI TRANNE IL SORT. STIAMO QUINDI PRENDENDO IL CODICE DI MARCO.
                       let titolo = document.querySelector('#titolo-annuncio');
                       let categoria = document.querySelector('#categoria-annuncio');
                       let prezzo = document.querySelector('#prezzo-annuncio');
@@ -381,23 +380,42 @@
 
                         titolo.innerHTML = annunci[i].name
                         categoria.innerHTML = annunci[i].category
-                        prezzo.innerHTML = annunci[i].price
+                        prezzo.innerHTML = annunci[i].price + ' €'
                       }
 
                       })
-                  })
-
-
                   }
 
-                  fillModal()
+                  }
+                  fillModalSort()
 
 
-                })
 
-                
+                  function fillModal() {
 
-    
+                  let buttons = document.querySelectorAll('[id-annuncio]')
+
+                  buttons.forEach(button => {
+                      button.addEventListener('click',() =>{
+                      let id = button.getAttribute("id-annuncio")
+                      // let modalAds = annunci.find(el => el.id == id)
+                      let titolo= document.querySelector('#titolo-annuncio')
+                      let prezzo= document.querySelector('#prezzo-annuncio')
+                      let categoria = document.querySelector('#categoria-annuncio')
+
+                      titolo.innerHTML = annunci[id-1].name
+                      prezzo.innerHTML = annunci[id-1].price + '€'
+                      categoria.innerHTML = annunci[id-1].category
+                      
+                      })
+                  })
+                 }
+                 fillModal()
+
+
+    }         
+
+      )
       
 
 
