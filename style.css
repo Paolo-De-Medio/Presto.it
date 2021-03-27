@@ -114,14 +114,10 @@ body,html{
     .masthead {
         height: 100vh;
         min-height: 500px;
-        background-color: var(--accent-color);
         background-image: url(./media/Bg-4.png);
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
-        border-style: solid;
-        border-width: 1px;
-        border-color: var(--sec-color);
       }
 
       .shake:hover {
@@ -235,6 +231,11 @@ body,html{
         transform: scale(1.1);
     }
 
+    .cardsAd:hover{
+        background-color: rgb(231, 166, 152);
+        transition: all 0.4s ease-in-out;
+    }
+
     .btn-color:hover{
         background-color: white;
         color: var(--accent-color);
@@ -250,17 +251,29 @@ body,html{
     /* CAROUSEL */
 
     .card-img-overlay h5 , p {
-        -webkit-text-stroke: 0.5px black;
+        -webkit-text-stroke: 0.4px black;
     }
+
     .ad-card-overlay {
     background: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(3px);
     transition: all 0.4s ease-in-out;
 }
 
+.ad-card-overlay:hover{
+    backdrop-filter: blur(0);
+    background: none;
+}
+
+.heart-like:hover{
+    color: cyan;
+    transform: scale(1.4);
+    transition: all 0.4s ease-in-out;
+}
+
     .slick-prev:before, .slick-next:before{
         font-size: 30px;
-        color: white;
+        color: var(--accent-color);
     } 
 
     .btn-outline-main{
@@ -275,11 +288,6 @@ body,html{
     .btn-outline-main:hover{
         background-color: var(--accent-color);
         color: var(--accent-color);
-    }
-
-    .btn-bottom-1{
-        bottom: 20px;
-        color: white;
     }
 
     .slick-next , .slick-prev {
@@ -312,6 +320,14 @@ body,html{
         opacity: 100%;
       }
 
+
+      .input-custom{
+          border: 2px solid var(--main-color);
+          border-radius: 6px;
+      }
+
+    
+
     /* FOOTER */
 
     .bg-footer{
@@ -332,8 +348,11 @@ body,html{
     /* SEZIONE FILTRI */
 
     .filter-nav-custom{
-        border-radius: 7px;
+        border-radius: 15px;
         height: 80%;
+        background-image: url(./media/Bg-4.png);
+        background-size: cover;
+        background-position: top right;
     }
 
     @media screen and (max-width:992px) {
@@ -421,8 +440,7 @@ body,html{
 
 
     /* MODALE */
-    .modal-content {
-        border: var(--main-color) !important;
-        border-width: 2px;
-        border-style: solid;
+    
+    .modal-border {
+        border-bottom: 2px solid var(--accent-color);
     }
