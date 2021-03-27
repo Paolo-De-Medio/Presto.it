@@ -336,7 +336,7 @@ body,html{
         height: 80%;
     }
 
-    @media screen and (max-width:991px) {
+    @media screen and (max-width:992px) {
         #min-price {
             max-width: 210px;
         }
@@ -348,7 +348,25 @@ body,html{
         #input-text {
             max-width: 197px;
         }
+        .card-body button {
+            transform: scale(0.8)
+            translateX(-13%)
+         }
     }
+
+    @media screen and (max-width:767px) {
+        .card-body {
+            text-align: center;
+        }
+
+        .card-body button {
+            transform: scale(1)
+         }
+
+        /* #img-annunci {
+           transform: translateX(64%)
+        } */
+
 
     @media screen and (max-width:301px) {
         #ordine-crescente{
@@ -359,31 +377,6 @@ body,html{
             transform: scale(0.8);
         }
 
-     
-
-
-    /* ANNUNCI */
-    @media screen and (max-width:994px) {
-        .card-body button {
-            transform: scale(0.8)
-         }
-     }
-    
-    @media screen and (max-width:766px) {
-        .card-body {
-            text-align: center;
-        }
-
-        .card-body button {
-           transform: scale(0.8)
-        }
-    }
-
-    @media screen and (max-width:300px) {
-        .card-body button {
-            transform: scale(0.7)
-         }
-     }
 
 
     /* BOTTONE COMPRA */
@@ -427,4 +420,3 @@ body,html{
         outline: transparent;
         box-shadow: none;
     }
-}
