@@ -292,5 +292,23 @@
         "name": "Modem",
         "category": "Mimmo",
         "price": "2.99"
+    },
+    {
+        "id": 50,
+        "name": "Cofanetto Ispettore Santo Catiponda",
+        "category": "Mimmo",
+        "price": "Svariati euri"
+    },
+    {
+        "id": 51,
+        "name": "Parrucca di Maccio Capatonda",
+        "category": "Mimmo",
+        "price": "fino a ieri: 5"
+    },
+    {
+        "id": 52,
+        "name": "Raccolta di preghiere: 'E se poi te ne penti?' di Padre Maronno",
+        "category": "Mimmo",
+        "price": "320"
     }
 ]
