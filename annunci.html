@@ -185,7 +185,7 @@
         <div class="container-fluid text-center">
           <div class="row">
             <div class="col-12">
-              <img class="border-solid mb-5" src="https://picsum.photos/200" alt="">
+              <img id="immagine-annuncio" class="border-solid mb-5" src="https://picsum.photos/250" alt="">
             </div>
             <div class="col-12">
               <h5 id="titolo-annuncio" class="fw-bold tc-main fs-2"></h5>
@@ -225,7 +225,7 @@
           
                     <div class="row d-flex align-items-center justify-content-center">
                       <div class="col-12 col-md-6">
-                        <img id="img-annunci" class="img-fluid p-4" src="https://picsum.photos/250" alt="...">
+                        <img id="img-annunci" class="img-fluid p-4" src="${annuncio.image}" alt="...">
                       </div>
                       <div class="col-12 col-md-6">
                         <div class="card-body" id-annuncio="${annuncio.id}">
@@ -375,6 +375,7 @@
                       let titolo = document.querySelector('#titolo-annuncio');
                       let categoria = document.querySelector('#categoria-annuncio');
                       let prezzo = document.querySelector('#prezzo-annuncio');
+                      let immagine = document.querySelector('#immagine-annuncio');
 
 
                       button[i].addEventListener('click', () => {
@@ -387,6 +388,7 @@
                         titolo.innerHTML = annunci[i].name
                         categoria.innerHTML = annunci[i].category
                         prezzo.innerHTML = annunci[i].price + ' €'
+                        immagine.innerHTML = annunci[i].image
                       }
 
                       })
@@ -408,10 +410,12 @@
                       let titolo= document.querySelector('#titolo-annuncio')
                       let prezzo= document.querySelector('#prezzo-annuncio')
                       let categoria = document.querySelector('#categoria-annuncio')
+                      let immagine = document.querySelector('#immagine-annuncio')
 
                       titolo.innerHTML = annunci[id-1].name
                       prezzo.innerHTML = annunci[id-1].price + '€'
                       categoria.innerHTML = annunci[id-1].category
+                      immagine.innerHTML = annunci[id-1].image
                       
                       })
                   })
