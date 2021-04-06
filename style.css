@@ -418,13 +418,24 @@ body, html{
 
     /* PROFILO */
 
-    .img-profilo {
+    /* .img-profilo {
         width: 300px;
         height: 300px;
         border-radius: 50%;
         border: solid var(--accent-color) 5px;
         padding: 5px;
+    } */
+
+    .card-custom {
+        width: 300px;
+        height: 300px;
+    } 
+
+    .img-profilo {
+        width: 300px;
+        height: 700px;
     }
+
 
     /* ACCORDION */
 

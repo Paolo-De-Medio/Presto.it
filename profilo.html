@@ -74,14 +74,10 @@
             <section>
                 <div class="container-fluid my-5 py-5">
                     <div class="row align-items-center">
-                        <div class="col-12 col-lg-6 text-center mb-5">
-                            <div class="picture2 m-0 p-0 anim-pic">
-                                <img class="img-profilo" src="./media/ceci-user.jpg" alt="...">
-                            </div>
+                        <div id="cardUtente" class="col-12 col-lg-6 text-center mb-5 d-flex justify-content-center">
                         </div>
             
                         <div class="col-12 col-lg-5">
-                            <h2 class="font-logo tc-main">NOME COGNOME</h2>
                             <div class="accordion accordion-flush" id="accordionFlushExample">
                                 <div class="accordion-item">
                                   <h2 class="font-logo accordion-header" id="flush-headingOne">
@@ -222,7 +218,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
 
     <!-- SlickCarousel -->
-    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script type="text/javascript" src="//cd n.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
     <!-- CECILIA -->
     <script src="./script.js"></script>
@@ -267,7 +263,76 @@
         }
         fillTabs()
 
+
+
       })
+
+      let utenti = [
+        {name: 'xxx' , surname: 'xxx' , photo: 'xxx'},
+        {name: 'Davide' , surname: 'Cariola' , photo: './media/davide-user.jpg'},
+        {name: 'Cecilia' , surname: 'Rocchi' , photo: './media/ceci-user.jpg'},
+        {name: 'Paolo' , surname: 'de Medio' , photo: './media/paolo-user.jpg'},
+        {name: 'Igor' , surname: 'Oliynyk' , photo: './media/igor-user.jpg'},
+        ]
+        let acaso = Math.floor(Math.random() * 4) + 1;
+
+        let card= document.querySelector('#cardUtente')
+
+        if(acaso == 1){
+            let cardUser = document.createElement('div')
+cardUser.innerHTML = `
+        <div class="card card-custom">
+        <img src="${utenti[1].photo}" class="card-img-top img-profilo " alt="...">
+        <div class="card-body fs-2">
+            <p class="card-text">${utenti[1].name} ${utenti[1].surname}</p>
+        </div>
+        </div> `
+        
+        card.appendChild(cardUser)
+        }else if(acaso == 2){
+
+            let cardUser = document.createElement('div')
+
+            cardUser.innerHTML = `
+            <div class="card card-custom">
+            <img src="${utenti[2].photo}" class="card-img-top img-profilo " alt="...">
+            <div class="card-body fs-2">
+                <p class="card-text">${utenti[2].name} ${utenti[2].surname}</p>
+            </div>
+            </div> `
+            
+            card.appendChild(cardUser)
+
+        }else if(acaso == 3){
+            let cardUser = document.createElement('div')
+
+        cardUser.innerHTML = `
+        <div class="card card-custom">
+        <img src="${utenti[3].photo}" class="card-img-top img-profilo " alt="...">
+        <div class="card-body fs-2">
+            <p class="card-text">${utenti[3].name} ${utenti[3].surname}</p>
+        </div>
+        </div> `
+        
+        card.appendChild(cardUser)
+        }else if(acaso == 4){
+            let cardUser = document.createElement('div')
+
+            cardUser.innerHTML = `
+            <div class="card card-custom">
+            <img src="${utenti[4].photo}" class="card-img-top img-profilo " alt="...">
+            <div class="card-body fs-2">
+                <p class="card-text">${utenti[4].name} ${utenti[4].surname}</p>
+            </div>
+            </div> `
+            
+            card.appendChild(cardUser)
+        }
+
+
+            
+
+
 
     </script>
 
