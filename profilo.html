@@ -271,7 +271,7 @@
         {name: 'xxx' , surname: 'xxx' , photo: 'xxx'},
         {name: 'Davide' , surname: 'Cariola' , photo: './media/davide-user.jpg'},
         {name: 'Cecilia' , surname: 'Rocchi' , photo: './media/ceci-user.jpg'},
-        {name: 'Paolo' , surname: 'de Medio' , photo: './media/paolo-user.jpg'},
+        {name: 'Paolo' , surname: 'De Medio' , photo: './media/paolo-user.jpg'},
         {name: 'Igor' , surname: 'Oliynyk' , photo: './media/igor-user.jpg'},
         ]
         let acaso = Math.floor(Math.random() * 4) + 1;
@@ -282,7 +282,7 @@
             let cardUser = document.createElement('div')
 cardUser.innerHTML = `
         <div class="card card-custom">
-        <img src="${utenti[1].photo}" class="card-img-top img-profilo " alt="...">
+        <img src="${utenti[1].photo}" class="card-img-top img-profilo img-fluid" alt="...">
         <div class="card-body fs-2">
             <p class="card-text">${utenti[1].name} ${utenti[1].surname}</p>
         </div>
@@ -295,7 +295,7 @@ cardUser.innerHTML = `
 
             cardUser.innerHTML = `
             <div class="card card-custom">
-            <img src="${utenti[2].photo}" class="card-img-top img-profilo " alt="...">
+            <img src="${utenti[2].photo}" class="card-img-top img-profilo img-fluid" alt="...">
             <div class="card-body fs-2">
                 <p class="card-text">${utenti[2].name} ${utenti[2].surname}</p>
             </div>
@@ -308,7 +308,7 @@ cardUser.innerHTML = `
 
         cardUser.innerHTML = `
         <div class="card card-custom">
-        <img src="${utenti[3].photo}" class="card-img-top img-profilo " alt="...">
+        <img src="${utenti[3].photo}" class="card-img-top img-profilo img-fluid" alt="...">
         <div class="card-body fs-2">
             <p class="card-text">${utenti[3].name} ${utenti[3].surname}</p>
         </div>
@@ -320,7 +320,7 @@ cardUser.innerHTML = `
 
             cardUser.innerHTML = `
             <div class="card card-custom">
-            <img src="${utenti[4].photo}" class="card-img-top img-profilo " alt="...">
+            <img src="${utenti[4].photo}" class="card-img-top img-profilo img-fluid" alt="...">
             <div class="card-body fs-2">
                 <p class="card-text">${utenti[4].name} ${utenti[4].surname}</p>
             </div>
